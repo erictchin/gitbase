@@ -6,7 +6,7 @@ pipeline {
       defaultContainer 'regression-gitbase'
       containerTemplate {
         name 'regression-gitbase'
-        image 'srcd/regression-gitbase:v0.1.0-beta.1'
+        image 'srcd/regression-gitbase:v0.1.0-beta.2'
         ttyEnabled true
         command 'cat'
       }
@@ -20,7 +20,7 @@ pipeline {
   stages {
     stage('Run') {
       steps {
-        sh '/bin/regression --complexity=2 --csv local:HEAD || true'
+        sh '/bin/regression --complexity=2 --csv local:HEAD'
       }
     }
     stage('Plot') {
