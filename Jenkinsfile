@@ -20,7 +20,7 @@ pipeline {
   stages {
     stage('Run') {
       steps {
-        sh '/bin/regression --complexity=0 --csv local:HEAD || true'
+        sh '/bin/regression --complexity=2 --csv local:HEAD || true'
       }
     }
     stage('Plot') {
